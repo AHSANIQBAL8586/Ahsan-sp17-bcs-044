@@ -2,6 +2,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
+import 'hardlevel.dart';
 // import 'package:quizzler/retry.dart';
 // import 'quiz_brain.dart';
 import 'dart:ui';
@@ -124,7 +125,7 @@ class DiceeApp extends StatelessWidget {
                     SizedBox(height: 70,),
                     // SizedBox(height: 2,),
                     RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context)=>hardlevel()));},
                       textColor: Colors.redAccent,
                       padding: const EdgeInsets.all(0.0),
                       child: Container(
