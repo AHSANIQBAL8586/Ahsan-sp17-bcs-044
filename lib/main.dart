@@ -1,6 +1,7 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'HomePage.dart';
 // import 'package:quizzler/retry.dart';
 // import 'quiz_brain.dart';
 import 'dart:ui';
@@ -101,7 +102,9 @@ class DiceeApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>HomePage ()));
+                      },
                       textColor: Colors.redAccent,
                       padding: const EdgeInsets.all(0.0),
                       child: Container(
