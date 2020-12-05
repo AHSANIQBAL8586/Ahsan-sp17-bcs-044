@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Timer(
         Duration(seconds: 6),
             () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => QuizApp())));
+            context, MaterialPageRoute(builder: (context) =>DiceeApp ())));
   } //<- Creates an object that fetches an image.
   // var image = new Image(
   //     image: AssetImage(
@@ -72,18 +72,79 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class QuizApp extends StatelessWidget {
+
+class DiceeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.grey.shade900,
-        body: SafeArea(
-            child: Text("Wait for another work")
-          // Padding(
-          //   // padding: EdgeInsets.symmetric(horizontal: 10.0),
-          //   child: QuizPage(),
-          // ),
+      debugShowCheckedModeBanner: false,
+      home: DefaultTabController(
+        length: 2,
+
+        child: Scaffold(
+          backgroundColor: Colors.blue,
+          appBar: AppBar(
+            backgroundColor: Colors.blue[800],// status bar color
+            title: Text('DiceGame APP',style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold,fontSize:50,),),
+            bottom: TabBar(
+              tabs: [
+                Tab(text: "DiceApp"),
+                Tab(text: "Contact Us"),
+              ],
+            ),
+          ),
+          body: TabBarView(
+
+            children: [
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RaisedButton(
+                      onPressed: () {},
+                      textColor: Colors.redAccent,
+                      padding: const EdgeInsets.all(0.0),
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Colors.green,
+                              Colors.black,
+                              Colors.green,                            ],
+                          ),
+                        ),
+                        padding: const EdgeInsets.all(10.0),
+                        child:
+                        const Text('simple button', style: TextStyle(fontSize:30,)),
+                      ),
+                    ),
+                    SizedBox(height: 70,),
+                    // SizedBox(height: 2,),
+                    RaisedButton(
+                      onPressed: () {},
+                      textColor: Colors.redAccent,
+                      padding: const EdgeInsets.all(0.0),
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: <Color>[
+
+                              Colors.green,
+                              Colors.black,
+                              Colors.green,
+                            ],
+                          ),
+                        ),
+                        padding: const EdgeInsets.all(10.0),
+                        child:
+                        const Text('Hard button', style: TextStyle(fontSize: 30,)),
+                      ),
+                    ),
+                  ],),
+              ),
+              Text('Contact Page (Later will be change)'),
+            ],
+          ),
         ),
       ),
     );
