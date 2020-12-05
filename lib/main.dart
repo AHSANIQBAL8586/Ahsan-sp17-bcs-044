@@ -145,7 +145,7 @@ class DiceeApp extends StatelessWidget {
                     ),
                   ],),
               ),
-              Text('Contact Page (Later will be change)'),
+              Text('Ahsan iqbal   phone:03047812561',style: TextStyle(color: Colors.red,fontSize:20,),),
             ],
           ),
         ),
