@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
 import 'hardlevel.dart';
+import 'package:contactus/contactus.dart';
+import 'dart:io';
 // import 'package:quizzler/retry.dart';
 // import 'quiz_brain.dart';
 import 'dart:ui';
@@ -88,6 +90,19 @@ class DiceeApp extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.blue[800],// status bar color
             title: Text('DiceGame APP',style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold,fontSize:50,),),
+            actions: <Widget>[
+              Padding(
+                  padding: EdgeInsets.only(right: 20.0),
+                  child: GestureDetector(
+                    onTap: () {exit(0);},
+                    child: Icon(
+                      Icons.close,
+                      size: 26.0,
+                    ),
+                  )
+              ),
+
+            ],
             bottom: TabBar(
               tabs: [
                 Tab(text: "DiceApp"),
@@ -146,7 +161,18 @@ class DiceeApp extends StatelessWidget {
                     ),
                   ],),
               ),
-              Text('Ahsan iqbal   phone:03047812561',style: TextStyle(color: Colors.red,fontSize:20,),),
+              Column(
+                children: [
+                  ContactUs(
+
+                    email: 'ahsaniqbal8586@gmail.com',
+                    companyName: 'Ahsan iqbal',
+                    phoneNumber: '+923047812561',
+                    githubUserName: 'ahsandoola',
+                    tagLine: 'experience flutter user',
+                  ),
+                ],
+              )
             ],
           ),
         ),
